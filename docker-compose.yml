@@ -7,9 +7,9 @@ services:
       ports:
         - 3306:3306
       environment:
-        - "MARIADB_ROOT_PASSWORD=2H@rd4me3"
-        - "MARIADB_USER=remote"
-        - "MARIADB_PASSWORD=Nh@kaLIF3"
+        - "MARIADB_ROOT_PASSWORD=mypassword"
+        - "MARIADB_USER=neuser"
+        - "MARIADB_PASSWORD=mypass"
         - "MARIADB_EXTRA_FLAGS=--max-connect-errors=1000 --max_connections=155"
       network_mode: host
       restart: on-failure
@@ -23,6 +23,6 @@ services:
     image: phpmyadmin/phpmyadmin
     environment:
       - "PMA_HOST=mariadb"
-      - "MYSQL_ROOT_PASSWORD=2H@rd4me3"
+      - "MYSQL_ROOT_PASSWORD=mypassword"
     ports:
       - "8084:80"
